@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "fairness-drift"
+version = "2.0.0"
+description = "A scalable, mathematically rigorous engine for monitoring temporal fairness drift in production ML models."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.104.0,<1.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+    "uvicorn>=0.24.0,<1.0.0",
+    "matplotlib>=3.7.0,<4.0.0",
+    "numpy>=1.24.0,<3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0,<9.0.0",
+    "httpx>=0.25.0,<1.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["drift*", "api*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

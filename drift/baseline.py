@@ -37,6 +37,13 @@ class NaiveSlidingWindow:
                 if item['y_pred'] == 1:
                     group_stats[grp]['true_pos'] += 1
                     
-        self.current_metric_value = self.metric_fn(group_stats)
+        metric_val = self.metric_fn(group_stats)
+        
+        # Handle None return from updated metrics (insufficient group data)
+        if metric_val is None:
+            self.current_metric_value = 0.0
+            return False
+        
+        self.current_metric_value = metric_val
         
         return self.current_metric_value > self.threshold
