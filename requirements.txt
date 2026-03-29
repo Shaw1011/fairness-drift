@@ -1,0 +1,6 @@
+fastapi
+pydantic
+uvicorn
+matplotlib
+pytest
+numpy
