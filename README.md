@@ -1,4 +1,4 @@
-# Temporal Fairness Drift Monitor ⚖️📈
+# Temporal Fairness Drift Monitor
 
 A scalable, mathematically rigorous, and computationally efficient orchestration engine for monitoring automated temporal fairness drift in machine learning models running in production environments.
 
@@ -6,7 +6,7 @@ A scalable, mathematically rigorous, and computationally efficient orchestration
 
 ---
 
-## 🎯 The Problem
+## The Problem
 
 When a machine learning model or LLM is audited for compliance, it is validated on a static, historical dataset. If it achieves a Demographic Parity (DP) or Equal Opportunity (EO) differential within acceptable margins, it is deployed.
 
@@ -18,7 +18,7 @@ Current orchestration platforms detect simple accuracy drift, but *Fairness Drif
 
 ---
 
-## 🚀 The Solution: The "Detection Triangle"
+## The Solution: The "Detection Triangle"
 
 This architecture eliminates arbitrary fixed-window parameters ("duct-tape" sliding windows) by employing a mathematically rigorous **Detection Triangle**. It processes prediction streams in statistical micro-batches, resulting in zero-state memory bloat (*O(1) continuous complexity* using Welford's online algorithm):
 
@@ -30,7 +30,7 @@ All detections are strictly evaluated with returning $p$-values and confidence m
 
 ---
 
-## 📊 Benchmark Results (COMPAS & Adversarial Simulations)
+## Benchmark Results (COMPAS & Adversarial Simulations)
 
 The framework has been benchmarked against both structured adversarial data-poisoning attacks and real-world proxy architectures based on the COMPAS recidivism datasets.
 
@@ -41,7 +41,7 @@ The framework has been benchmarked against both structured adversarial data-pois
 
 ---
 
-## 🛠️ Architecture & Quickstart
+## Architecture & Quickstart
 
 ### Installation & API
 The system is built as an independent, lightweight Python package integrating a FastAPI endpoint to ingest real-time predictions from any live AI agent.
